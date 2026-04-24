@@ -1,0 +1,10 @@
+---
+// Light-only ThemeProvider — overrides Starlight default to force light theme.
+// Removes dark mode support entirely. No <template> needed since there is no toggle.
+---
+
+<script is:inline>
+  // Force light theme and clear any stale dark-mode preference
+  document.documentElement.dataset.theme = 'light';
+  try { localStorage.removeItem('starlight-theme'); } catch (_) {}
+</script>

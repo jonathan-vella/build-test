@@ -12,13 +12,6 @@
   --sl-line-height: 1.7;
 }
 
-/* ===== Dark mode ===== */
-:root[data-theme="dark"] {
-  --sl-color-accent-low: #003d6b;
-  --sl-color-accent: #4da6ff;
-  --sl-color-accent-high: #b3d7ff;
-}
-
 /* ===== Mermaid diagram containers ===== */
 pre.mermaid {
   background: transparent !important;
@@ -29,18 +22,10 @@ pre.mermaid {
   text-align: center;
 }
 
-:root[data-theme="dark"] pre.mermaid {
-  border-color: var(--sl-color-gray-3);
-}
-
 /* ===== Table header accent ===== */
 th {
   background-color: var(--sl-color-accent-low);
   font-weight: 600;
-}
-
-:root[data-theme="dark"] th {
-  background-color: var(--sl-color-gray-6);
 }
 
 /* ===== Sidebar badge compact styling ===== */
@@ -58,8 +43,4 @@ th {
 /* ===== TL;DR admonition accent ===== */
 .starlight-aside--tip {
   border-inline-start-color: #0078d4;
-}
-
-:root[data-theme="dark"] .starlight-aside--tip {
-  border-inline-start-color: #4da6ff;
 }

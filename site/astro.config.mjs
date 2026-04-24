@@ -13,6 +13,10 @@ export default defineConfig({
     starlight({
       title: "dc2fabric",
       tagline: "The Modernization Journey from Datacenter to Microsoft Fabric",
+      components: {
+        ThemeProvider: "./src/components/ThemeProvider.astro",
+        ThemeSelect: "./src/components/ThemeSelect.astro",
+      },
       customCss: ["./src/styles/custom.css"],
       head: [
         {
