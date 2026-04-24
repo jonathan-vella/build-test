@@ -27,18 +27,23 @@ underneath becomes modern, managed, and cost-optimized.
 
 ```mermaid
 graph TB
-  subgraph "Azure"
-    subgraph "Virtual Network"
-      AVM["Azure VMs<br/>**.NET Framework Apps**"]
-      SQLMI["**Azure SQL<br/>Managed Instance**"]
-    end
-    MON["Azure Monitor"]
-    BAK["Azure Backup"]
+  classDef azure fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef db    fill:#038387,stroke:#025356,color:#fff
+  classDef ops   fill:#deecf9,stroke:#0078d4,color:#003459
+  subgraph vnet["Azure Virtual Network"]
+    AVM(["Azure VMs<br/>.NET Framework Apps"]):::azure
+    SQLMI[("Azure SQL<br/>Managed Instance")]:::db
   end
-  AVM --> SQLMI
-  AVM -.-> MON
-  SQLMI -.-> MON
-  SQLMI -.-> BAK
+  subgraph plat["Platform Services"]
+    MON["Azure Monitor"]:::ops
+    BAK["Azure Backup"]:::ops
+  end
+  AVM -->|"App traffic"| SQLMI
+  AVM -.->|"Telemetry"| MON
+  SQLMI -.->|"Telemetry"| MON
+  SQLMI -.->|"Backup"| BAK
+  style vnet fill:#e6f3ff,stroke:#0078d4
+  style plat fill:#f0f9f0,stroke:#107c10
 ```
 
 ## Why SQL Managed Instance

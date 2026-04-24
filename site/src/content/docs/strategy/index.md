@@ -28,15 +28,17 @@ It works. But the business is outgrowing it.
 
 ```mermaid
 graph TB
-  subgraph "On-Premises Data Center"
-    VM1["Windows Server VMs"]
-    APP["**.NET Framework Apps**<br/>IIS / Web Services"]
-    SQL["SQL Server 2016/2019"]
-    NET["Corporate Network"]
+  classDef onprem fill:#f3f2f1,stroke:#605e5c,color:#201f1e
+  subgraph dc["On-Premises Data Center"]
+    VM1["Windows Server VMs"]:::onprem
+    APP(["**.NET Framework Apps**<br/>IIS / Web Services"]):::onprem
+    SQL[("SQL Server 2016/2019")]:::onprem
+    NET["Corporate Network"]:::onprem
   end
   VM1 --> APP
   APP --> SQL
   NET --- VM1
+  style dc fill:#faf9f8,stroke:#8a8886
 ```
 
 :::tip[The pattern is universal]

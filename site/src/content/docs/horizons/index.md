@@ -27,20 +27,24 @@ transformation.
 
 ```mermaid
 graph TB
-  subgraph "Horizon 1 — Lift & Shift & Optimize"
-    H1_VM["VMs → Azure VMs"]
-    H1_SQL["SQL Server → **SQL Managed Instance**"]
-    H1_FAB["SQL MI Mirroring → **Fabric**"]
+  classDef azure  fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef fabric fill:#742774,stroke:#5a1e5a,color:#fff
+  subgraph h1["Horizon 1 — Lift & Shift & Optimize"]
+    H1_VM(["VMs → Azure VMs"]):::azure
+    H1_SQL[("SQL Server → SQL Managed Instance")]:::azure
+    H1_FAB(["SQL MI Mirroring → Fabric"]):::fabric
   end
-  subgraph "Horizon 2 — Modernize"
-    H2_APP[".NET → **Containerized .NET**"]
-    H2_SQL["SQL Server → **Azure SQL Database**"]
-    H2_FAB["Azure SQL DB → **Fabric**"]
+  subgraph h2["Horizon 2 — Modernize"]
+    H2_APP(["NET → Containerized .NET"]):::azure
+    H2_SQL[("SQL Server → Azure SQL Database")]:::azure
+    H2_FAB(["Azure SQL DB → Fabric"]):::fabric
   end
   H1_VM --> H1_SQL
   H1_SQL -.-> H1_FAB
   H2_APP --> H2_SQL
   H2_SQL -.-> H2_FAB
+  style h1 fill:#e6f3ff,stroke:#0078d4
+  style h2 fill:#e6f3ff,stroke:#0078d4
 ```
 
 ### Horizon 1 — Lift & Shift & Optimize

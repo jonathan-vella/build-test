@@ -20,10 +20,14 @@ the previous one, with clear activities, outcomes, and decision points.
 
 ```mermaid
 graph LR
-  S1["**Stage 1**<br/>Listen &<br/>Consult"] --> S2["**Stage 2**<br/>Inspire &<br/>Design"]
-  S2 --> S3["**Stage 3**<br/>Empower &<br/>Achieve"]
-  S3 --> S4["**Stage 4**<br/>Realize<br/>Value"]
-  S4 --> S5["**Stage 5**<br/>Manage &<br/>Optimize"]
+  classDef stage  fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef finish fill:#742774,stroke:#5a1e5a,color:#fff
+  S1(["MCEM 1<br/><b>Define the Strategy</b>"]):::stage
+  S2(["MCEM 2<br/><b>Discover & Design</b>"]):::stage
+  S3(["MCEM 3<br/><b>Migrate & Modernize</b>"]):::stage
+  S4(["MCEM 4<br/><b>Realize the Value</b>"]):::stage
+  S5(["MCEM 5<br/><b>Optimize & Grow</b>"]):::finish
+  S1 --> S2 --> S3 --> S4 --> S5
 ```
 
 ## Stage-by-Stage Breakdown
@@ -108,11 +112,11 @@ gantt
   dateFormat YYYY-MM
   axisFormat %b
   section MCEM Stages
-    Stage 1 - Listen & Consult    :s1, 2026-01, 1M
-    Stage 2 - Inspire & Design    :s2, after s1, 2M
-    Stage 3 - Empower & Achieve   :s3, after s2, 4M
-    Stage 4 - Realize Value       :s4, after s3, 1M
-    Stage 5 - Manage & Optimize   :s5, after s4, 2M
+    Define the Strategy     :s1, 2026-01, 1M
+    Discover & Design       :s2, after s1, 2M
+    Migrate & Modernize     :s3, after s2, 4M
+    Realize the Value       :s4, after s3, 1M
+    Optimize & Grow         :s5, after s4, 2M
   section Horizon 1
     Assessment & planning :h1a, 2026-02, 2M
     Migration execution   :h1b, 2026-04, 2M

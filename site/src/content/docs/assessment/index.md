@@ -30,9 +30,12 @@ Each dimension produces its own set of findings and recommendations.
 
 ```mermaid
 graph LR
-  DISCOVER["**Discover**<br/>Agents scan the<br/>on-prem estate"] --> ASSESS["**Assess**<br/>Readiness, sizing,<br/>dependencies"]
-  ASSESS --> CATEGORIZE["**Categorize**<br/>Group by migration<br/>path and complexity"]
-  CATEGORIZE --> RECOMMEND["**Recommend**<br/>Target service,<br/>estimated cost"]
+  classDef step fill:#0078d4,stroke:#005a9e,color:#fff
+  DISCOVER(["<b>Discover</b><br/>Agents scan the<br/>on-prem estate"]):::step
+  ASSESS(["<b>Assess</b><br/>Readiness, sizing,<br/>dependencies"]):::step
+  CATEGORIZE(["<b>Categorize</b><br/>Group by migration<br/>path and complexity"]):::step
+  RECOMMEND(["<b>Recommend</b><br/>Target service,<br/>estimated cost"]):::step
+  DISCOVER --> ASSESS --> CATEGORIZE --> RECOMMEND
 ```
 
 ### Infrastructure

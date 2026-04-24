@@ -48,21 +48,30 @@ in Microsoft Fabric. This is the strategic payoff of the entire journey:
 
 ```mermaid
 graph TB
-  subgraph "Horizon 1 Workloads"
-    MI1["SQL MI — ERP"]
-    MI2["SQL MI — MES"]
+  classDef sql     fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef onelake fill:#742774,stroke:#5a1e5a,color:#fff
+  classDef bi      fill:#fde8f9,stroke:#742774,color:#3a003a
+  subgraph h1["Horizon 1 Workloads"]
+    MI1[("SQL MI — ERP")]:::sql
+    MI2[("SQL MI — MES")]:::sql
   end
-  subgraph "Horizon 2 Workloads"
-    DB1["Azure SQL DB — E-commerce"]
-    DB2["Azure SQL DB — Customer Portal"]
+  subgraph h2["Horizon 2 Workloads"]
+    DB1[("Azure SQL DB — E-commerce")]:::sql
+    DB2[("Azure SQL DB — Customer Portal")]:::sql
   end
-  MI1 -->|"Mirror"| OL["**OneLake**"]
+  OL(["OneLake"]):::onelake
+  PBI["Power BI<br/>Executive Dashboards"]:::bi
+  DS["Data Science<br/>Predictive Models"]:::bi
+  RTI["Real-Time Intelligence<br/>Operational Alerts"]:::bi
+  MI1 -->|"Mirror"| OL
   MI2 -->|"Mirror"| OL
   DB1 -->|"Mirror"| OL
   DB2 -->|"Mirror"| OL
-  OL --> PBI["**Power BI**<br/>Executive Dashboards"]
-  OL --> DS["**Data Science**<br/>Predictive Models"]
-  OL --> RTI["**Real-Time Intelligence**<br/>Operational Alerts"]
+  OL --> PBI
+  OL --> DS
+  OL --> RTI
+  style h1 fill:#e6f3ff,stroke:#0078d4
+  style h2 fill:#e6f3ff,stroke:#0078d4
 ```
 
 :::tip[One platform, not two]

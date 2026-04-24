@@ -20,13 +20,37 @@ import { CardGrid, Card, LinkCard } from "@astrojs/starlight/components";
 
 ## The Journey at a Glance
 
-```mermaid
-graph LR
-  S["**Strategy**\nCAF · MCEM 1"] --> A["**Assess & Design**\nAzure Migrate · MCEM 2"]
-  A --> E["**Execute**\nEmpower & Achieve · MCEM 3"]
-  E --> O["**Outcomes**\nRealize Value · MCEM 4"]
-  O --> M["**Optimize**\nManage & Grow · MCEM 5"]
-```
+<div class="mcem-journey" role="list" aria-label="Modernization journey stages">
+  <div class="mcem-stage" role="listitem">
+    <div class="mcem-badge">MCEM 1</div>
+    <div class="mcem-title">Define the Strategy</div>
+    <div class="mcem-sub">CAF · Business Case</div>
+  </div>
+  <div class="mcem-connector" aria-hidden="true"></div>
+  <div class="mcem-stage" role="listitem">
+    <div class="mcem-badge">MCEM 2</div>
+    <div class="mcem-title">Discover &amp; Design</div>
+    <div class="mcem-sub">Azure Migrate</div>
+  </div>
+  <div class="mcem-connector" aria-hidden="true"></div>
+  <div class="mcem-stage" role="listitem">
+    <div class="mcem-badge">MCEM 3</div>
+    <div class="mcem-title">Migrate &amp; Modernize</div>
+    <div class="mcem-sub">H1 · H2 · Horizons</div>
+  </div>
+  <div class="mcem-connector" aria-hidden="true"></div>
+  <div class="mcem-stage" role="listitem">
+    <div class="mcem-badge">MCEM 4</div>
+    <div class="mcem-title">Realize the Value</div>
+    <div class="mcem-sub">TCO · Fabric</div>
+  </div>
+  <div class="mcem-connector" aria-hidden="true"></div>
+  <div class="mcem-stage mcem-stage--fabric" role="listitem">
+    <div class="mcem-badge">MCEM 5</div>
+    <div class="mcem-title">Optimize &amp; Grow</div>
+    <div class="mcem-sub">Azure Advisor · AI</div>
+  </div>
+</div>
 
 ## By the Numbers
 

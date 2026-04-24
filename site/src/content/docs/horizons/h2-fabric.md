@@ -25,11 +25,20 @@ additional capabilities.
 
 ```mermaid
 graph LR
-  SQLDB["**Azure SQL Database**<br/>Cloud-Native"] -->|"Mirroring<br/>(near real-time)"| ONELAKE["**OneLake**<br/>Fabric Data Lake"]
-  ONELAKE --> PBI["**Power BI**<br/>Reports & Dashboards"]
-  ONELAKE --> ENG["**Data Engineering**<br/>Spark / Notebooks"]
-  ONELAKE --> SCI["**Data Science**<br/>ML Models"]
-  ONELAKE --> RTI["**Real-Time<br/>Intelligence**"]
+  classDef azure   fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef onelake fill:#742774,stroke:#5a1e5a,color:#fff
+  classDef bi      fill:#fde8f9,stroke:#742774,color:#3a003a
+  SQLDB[("Azure SQL Database<br/>Cloud-Native")]:::azure
+  ONELAKE(["OneLake<br/>Fabric Data Lake"]):::onelake
+  PBI["Power BI<br/>Reports & Dashboards"]:::bi
+  ENG["Data Engineering<br/>Spark / Notebooks"]:::bi
+  SCI["Data Science<br/>ML Models"]:::bi
+  RTI["Real-Time Intelligence"]:::bi
+  SQLDB -->|"Mirroring (near real-time)"| ONELAKE
+  ONELAKE --> PBI
+  ONELAKE --> ENG
+  ONELAKE --> SCI
+  ONELAKE --> RTI
 ```
 
 ## Why H2 + Fabric is More Powerful
@@ -51,15 +60,22 @@ becomes the single destination for all operational data:
 
 ```mermaid
 graph TB
-  subgraph "Horizon 1"
-    SQLMI["SQL Managed<br/>Instance"]
+  classDef azure   fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef onelake fill:#742774,stroke:#5a1e5a,color:#fff
+  classDef bi      fill:#fde8f9,stroke:#742774,color:#3a003a
+  subgraph h1["Horizon 1"]
+    SQLMI[("SQL Managed Instance")]:::azure
   end
-  subgraph "Horizon 2"
-    SQLDB["Azure SQL<br/>Database"]
+  subgraph h2["Horizon 2"]
+    SQLDB[("Azure SQL Database")]:::azure
   end
-  SQLMI -->|"Mirroring"| OL["**OneLake**"]
+  OL(["OneLake"]):::onelake
+  ANALYTICS["Unified Analytics<br/>BI · ML · Real-Time"]:::bi
+  SQLMI -->|"Mirroring"| OL
   SQLDB -->|"Mirroring"| OL
-  OL --> ANALYTICS["Unified Analytics<br/>BI · ML · Real-Time"]
+  OL --> ANALYTICS
+  style h1 fill:#e6f3ff,stroke:#0078d4
+  style h2 fill:#e6f3ff,stroke:#0078d4
 ```
 
 :::note[Fabric is the destination, not the detour]

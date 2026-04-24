@@ -23,10 +23,18 @@ underpins all Fabric workloads.
 
 ```mermaid
 graph LR
-  SQLMI["**Azure SQL<br/>Managed Instance**"] -->|"Mirroring<br/>(near real-time)"| ONELAKE["**OneLake**<br/>Fabric Data Lake"]
-  ONELAKE --> PBI["**Power BI**<br/>Reports & Dashboards"]
-  ONELAKE --> ENG["**Data Engineering**<br/>Spark / Notebooks"]
-  ONELAKE --> SCI["**Data Science**<br/>ML Models"]
+  classDef azure   fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef onelake fill:#742774,stroke:#5a1e5a,color:#fff
+  classDef bi      fill:#fde8f9,stroke:#742774,color:#3a003a
+  SQLMI[("Azure SQL<br/>Managed Instance")]:::azure
+  ONELAKE(["OneLake<br/>Fabric Data Lake"]):::onelake
+  PBI["Power BI<br/>Reports & Dashboards"]:::bi
+  ENG["Data Engineering<br/>Spark / Notebooks"]:::bi
+  SCI["Data Science<br/>ML Models"]:::bi
+  SQLMI -->|"Mirroring (near real-time)"| ONELAKE
+  ONELAKE --> PBI
+  ONELAKE --> ENG
+  ONELAKE --> SCI
 ```
 
 ## Why This Matters

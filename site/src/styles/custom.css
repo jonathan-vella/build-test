@@ -44,3 +44,96 @@ th {
 .starlight-aside--tip {
   border-inline-start-color: #0078d4;
 }
+
+/* ===== MCEM Journey Infographic (landing page) ===== */
+.mcem-journey {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.mcem-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #0078d4;
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1rem;
+  min-width: 7rem;
+  flex: 1 1 7rem;
+  max-width: 10rem;
+}
+
+.mcem-stage--fabric {
+  background: #742774;
+}
+
+.mcem-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.mcem-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.mcem-sub {
+  font-size: 0.72rem;
+  opacity: 0.88;
+  line-height: 1.3;
+}
+
+.mcem-connector {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 2px;
+  background: #0078d4;
+  position: relative;
+}
+
+.mcem-connector::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -5px;
+  border: 6px solid transparent;
+  border-left-color: #0078d4;
+}
+
+@media (max-width: 640px) {
+  .mcem-journey {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .mcem-stage {
+    max-width: 100%;
+  }
+  .mcem-connector {
+    align-self: center;
+    width: 2px;
+    height: 1.5rem;
+    background: #0078d4;
+  }
+  .mcem-connector::after {
+    right: -5px;
+    top: auto;
+    bottom: -1px;
+    border: 6px solid transparent;
+    border-top-color: #0078d4;
+    border-left-color: transparent;
+  }
+}

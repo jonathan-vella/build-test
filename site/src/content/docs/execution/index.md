@@ -75,9 +75,12 @@ Every migration wave follows the same validation pattern:
 
 ```mermaid
 graph LR
-  PRE["**Pre-migration**<br/>Backup, snapshot,<br/>rollback plan"] --> MIG["**Migrate**<br/>Replicate and<br/>cut over"]
-  MIG --> VAL["**Validate**<br/>Functional tests,<br/>performance checks"]
-  VAL --> OPT["**Optimize**<br/>Right-size,<br/>tune, monitor"]
+  classDef step fill:#0078d4,stroke:#005a9e,color:#fff
+  PRE(["<b>Pre-migration</b><br/>Backup, snapshot,<br/>rollback plan"]):::step
+  MIG(["<b>Migrate</b><br/>Replicate and<br/>cut over"]):::step
+  VAL(["<b>Validate</b><br/>Functional tests,<br/>performance checks"]):::step
+  OPT(["<b>Optimize</b><br/>Right-size,<br/>tune, monitor"]):::step
+  PRE --> MIG --> VAL --> OPT
 ```
 
 :::caution[Never skip validation]

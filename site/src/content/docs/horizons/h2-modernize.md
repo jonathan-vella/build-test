@@ -30,23 +30,33 @@ business needs it to.
 
 ```mermaid
 graph TB
-  subgraph "Azure"
-    subgraph "Container Apps Environment"
-      CA["**Azure Container Apps**<br/>.NET Core Services"]
-    end
-    SQLDB["**Azure SQL Database**<br/>Serverless"]
-    ACR["Azure Container<br/>Registry"]
-    KV["Azure Key Vault"]
-    MON["Azure Monitor"]
+  classDef azure  fill:#0078d4,stroke:#005a9e,color:#fff
+  classDef db     fill:#038387,stroke:#025356,color:#fff
+  classDef devops fill:#107c10,stroke:#0a5e0a,color:#fff
+  classDef ops    fill:#deecf9,stroke:#0078d4,color:#003459
+  subgraph aca["Container Apps Environment"]
+    CA(["Azure Container Apps<br/>.NET Core Services"]):::azure
   end
-  subgraph "DevOps"
-    GH["GitHub Actions<br/>CI/CD Pipeline"]
+  subgraph data["Data & Secrets"]
+    SQLDB[("Azure SQL Database<br/>Serverless")]:::db
+    KV["Azure Key Vault"]:::ops
+  end
+  subgraph obs["Observability"]
+    MON["Azure Monitor"]:::ops
+    ACR["Container Registry"]:::ops
+  end
+  subgraph cicd["DevOps"]
+    GH(["GitHub Actions<br/>CI/CD Pipeline"]):::devops
   end
   GH -->|"Push image"| ACR
   ACR -->|"Pull image"| CA
-  CA --> SQLDB
-  CA -.-> KV
-  CA -.-> MON
+  CA -->|"Queries"| SQLDB
+  CA -.->|"Secrets"| KV
+  CA -.->|"Telemetry"| MON
+  style aca  fill:#e6f3ff,stroke:#0078d4
+  style data fill:#e6fafa,stroke:#038387
+  style obs  fill:#f0f7ff,stroke:#0078d4
+  style cicd fill:#f0f9f0,stroke:#107c10
 ```
 
 ## The .NET Modernization Path
