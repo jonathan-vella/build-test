@@ -5,6 +5,12 @@ sidebar:
   order: 5
 ---
 
+:::tip[TL;DR]
+Modernized H2 apps produce richer data. Azure SQL DB mirroring to Fabric
+combines cloud-native data models with ML, real-time intelligence, and
+unified analytics — the full strategic payoff of modernization.
+:::
+
 Horizon 2 applications produce richer, more granular data than their
 legacy predecessors. With **Azure SQL Database mirroring to Fabric**,
 that data flows directly into the unified data platform — ready for
@@ -74,3 +80,5 @@ For the customer, this means:
 - **Incremental value** — H1 workloads contribute data to Fabric today;
   as they evolve to H2, the data gets richer — but the platform is already
   in place
+
+[← Back to H2 Modernize](/dc2fabric/horizons/h2-modernize/) · [Continue to Execution →](/dc2fabric/execution/)

@@ -1,19 +1,26 @@
 ---
 title: "The Execution"
-description: "Delivering Horizon 1 and Horizon 2 migrations with Azure Migrate, DMS, and DevOps — MCEM Stage 4"
+description: "Delivering Horizon 1 and Horizon 2 migrations with Azure Migrate, MI Link, and DevOps — MCEM Stage 3: Empower and Achieve"
 sidebar:
   order: 1
 ---
+
+:::tip[TL;DR]
+H1 runs in parallel with H2. VMs and SQL MI migrate in waves over weeks;
+.NET containerization and Azure SQL DB take months. Every wave follows a
+pre-migrate → migrate → validate → optimize guardrail. The customer team
+builds cloud skills throughout.
+:::
 
 The roadmap is approved. The workloads are assigned to horizons. Now we
 execute — methodically, with guardrails, and with continuous validation
 at every step.
 
-## MCEM Stage 4 — Empower
+## MCEM Stage 3 — Empower and Achieve
 
-This is **MCEM Stage 4: Empower**. The customer team is enabled to deliver
-the migration with Microsoft support, tooling, and best practices. The
-goal is not just to move workloads — it is to build the customer's
+This is **MCEM Stage 3: Empower and Achieve**. The customer team is enabled
+to deliver the migration with Microsoft support, tooling, and best practices.
+The goal is not just to move workloads — it is to build the customer's
 capability to operate and evolve their Azure environment independently.
 
 ## Execution by Horizon
@@ -41,8 +48,9 @@ gantt
    vaults, monitoring baselines
 2. **Migrate VMs in waves** — Use Azure Migrate to replicate and cut over
    VMs in planned waves, starting with low-risk workloads
-3. **Migrate databases** — Use Azure Database Migration Service (DMS) for
-   online migration to SQL Managed Instance with minimal downtime
+3. **Migrate databases** — Use the Managed Instance link (preferred for
+   minimal downtime) or Azure Database Migration Service (DMS) for
+   online migration to SQL Managed Instance
 4. **Validate and optimize** — Run functional tests, validate performance,
    right-size VMs based on actual Azure utilization data
 5. **Enable Fabric mirroring** — Configure SQL MI Mirroring to OneLake
@@ -50,8 +58,9 @@ gantt
 
 ### Horizon 2 — Execution Steps
 
-1. **Upgrade .NET applications** — Use the .NET Upgrade Assistant to migrate
-   from .NET Framework to .NET 8+, resolve breaking changes
+1. **Upgrade .NET applications** — Use the .NET Upgrade Assistant or the
+   GitHub Copilot modernization agent to migrate from .NET Framework
+   to .NET 8+, resolve breaking changes
 2. **Containerize** — Create Dockerfiles, set up Azure Container Registry,
    configure Azure Container Apps environments
 3. **Set up CI/CD** — Build GitHub Actions or Azure DevOps pipelines for
@@ -91,3 +100,5 @@ customer team builds skills in:
 
 By the time the migration is complete, the customer does not just have
 workloads in Azure — they have a team that knows how to operate them.
+
+[← Back to Horizons](/dc2fabric/horizons/) · [Continue to Outcomes →](/dc2fabric/outcomes/)

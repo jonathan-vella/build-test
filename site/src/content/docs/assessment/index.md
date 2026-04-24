@@ -1,20 +1,27 @@
 ---
 title: "Assess Everything"
-description: "Azure Migrate workload assessment across infrastructure, applications, and databases — MCEM Stage 2"
+description: "Azure Migrate workload assessment across infrastructure, applications, and databases — MCEM Stage 2: Inspire and Design"
 sidebar:
   order: 2
 ---
+
+:::tip[TL;DR]
+Azure Migrate assesses the full estate — VMs, .NET apps, and SQL databases —
+producing evidence-based recommendations for each workload. Typically 60-70%
+can migrate as-is; the rest need remediation, modernization, or retirement.
+:::
 
 Strategy gave us direction. Now we need evidence. **Azure Migrate** provides
 a comprehensive, automated assessment of the entire estate — infrastructure,
 applications, and databases — so we can make informed decisions about what
 moves, how it moves, and in what order.
 
-## MCEM Stage 2 — Inspire
+## MCEM Stage 2 — Inspire and Design
 
-This is **MCEM Stage 2: Inspire**. We show the customer what is possible.
-The assessment transforms abstract modernization goals into concrete,
-workload-specific recommendations backed by data.
+This is **MCEM Stage 2: Inspire and Design**. We show the customer what is
+possible and begin shaping the solution. The assessment transforms abstract
+modernization goals into concrete, workload-specific recommendations backed
+by data — setting the stage for horizons design.
 
 ## Three Dimensions of Assessment
 
@@ -74,3 +81,5 @@ The assessment data feeds directly into the next phase: designing a
 **Horizons-based roadmap** that matches each workload to the right
 modernization path — whether that is a quick lift-and-shift (Horizon 1)
 or a deeper cloud-native transformation (Horizon 2).
+
+[← Back to Strategy](/dc2fabric/strategy/) · [Continue to Horizons →](/dc2fabric/horizons/)

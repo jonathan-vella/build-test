@@ -5,6 +5,12 @@ sidebar:
   order: 3
 ---
 
+:::tip[TL;DR]
+Northwind Traders: 65 VMs, 12 SQL databases, 8 .NET apps. ERP and
+loyalty go H1 (months 1–3); e-commerce and customer analytics go H2
+(months 2–7). Fabric unifies the Customer 360 view across all channels.
+:::
+
 **Northwind Traders** is a specialty food retailer with 80 stores and
 a fast-growing e-commerce platform. Their online business now accounts
 for 40% of revenue — but the technology behind it was designed for 10%.

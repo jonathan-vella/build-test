@@ -5,6 +5,12 @@ sidebar:
   order: 2
 ---
 
+:::tip[TL;DR]
+Horizon 1 migrates VMs to Azure and databases to SQL Managed Instance in
+**4–8 weeks** with near-zero application risk. Right-sizing and reserved
+instances typically deliver 30–40% infrastructure cost savings immediately.
+:::
+
 Horizon 1 is about getting to Azure quickly and safely. The applications
 do not change. The databases stay compatible. But the infrastructure
 underneath becomes modern, managed, and cost-optimized.
@@ -70,6 +76,18 @@ Horizon 1 delivers measurable value within weeks:
 - **Decommission on-premises**: Reduce data center footprint and
   associated facilities costs
 
+## Before and After
+
+| Dimension            | Before (On-Premises)              | After (Horizon 1)                    |
+| -------------------- | --------------------------------- | ------------------------------------ |
+| **Infrastructure**   | Self-managed VMs, manual patching | Azure VMs with automated patching    |
+| **Database**         | SQL Server (self-managed)         | SQL Managed Instance (fully managed) |
+| **Backups**          | Manual, on-site                   | Automated, geo-redundant             |
+| **Monitoring**       | Basic or manual                   | Azure Monitor with alerts            |
+| **Cost model**       | CapEx, over-provisioned           | OpEx, right-sized                    |
+| **Analytics**        | Manual spreadsheet exports        | SQL MI Mirroring → Fabric            |
+| **Typical timeline** | —                                 | **4–8 weeks**                        |
+
 :::tip[H1 is not a compromise]
 Lift and shift is sometimes dismissed as "just moving the problem to the
 cloud." But when done right — with proper right-sizing, reserved instances,
@@ -86,3 +104,5 @@ Once workloads are running in Azure, you have two paths:
    to unlock analytics without any further changes.
 2. **Evolve to H2** — For workloads that need elasticity, modern DevOps, or
    cloud-native capabilities, plan a [Horizon 2 modernization](/dc2fabric/horizons/h2-modernize/).
+
+[← Back to Horizons Overview](/dc2fabric/horizons/) · [Next: H1 + Fabric →](/dc2fabric/horizons/h1-fabric/)

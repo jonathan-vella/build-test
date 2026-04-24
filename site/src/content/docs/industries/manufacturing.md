@@ -5,6 +5,12 @@ sidebar:
   order: 1
 ---
 
+:::tip[TL;DR]
+Contoso Industries: 127 VMs, 22 SQL databases, 14 .NET apps. ERP and MES
+go H1 (months 1–4); customer portal and supply chain dashboard go H2
+(months 3–8). Fabric delivers the CEO’s real-time supply chain dashboard.
+:::
+
 **Contoso Industries** is a mid-sized manufacturer with 15 production
 facilities across Europe. Their IT estate has grown organically over
 two decades — reliable, but increasingly unable to support the business

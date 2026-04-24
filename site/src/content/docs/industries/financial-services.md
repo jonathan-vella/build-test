@@ -5,6 +5,13 @@ sidebar:
   order: 2
 ---
 
+:::tip[TL;DR]
+Woodgrove Bank: 340 VMs, 45 SQL databases, 28 .NET apps. Core banking
+and regulatory systems go H1 (months 1–5); digital banking and fraud
+detection go H2 (months 3–9). Fabric enables real-time transaction
+monitoring for regulatory compliance.
+:::
+
 **Woodgrove Bank** is a regional bank with 200+ branches and a growing
 digital banking platform. Decades of acquisitions have left them with
 a fragmented IT estate — multiple core banking systems, overlapping

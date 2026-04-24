@@ -3,7 +3,10 @@ title: "dc2fabric"
 description: "The Modernization Journey from Datacenter to Microsoft Fabric"
 template: splash
 hero:
-  tagline: "Modernization is a journey, not a big bang."
+  tagline: >
+    A structured modernization journey from on-premises datacenters to Azure
+    and Microsoft Fabric — using the Cloud Adoption Framework, MCEM methodology,
+    and the Horizons model. Modernization is a journey, not a big bang.
   actions:
     - text: Start the Journey
       link: /dc2fabric/strategy/
@@ -13,7 +16,73 @@ hero:
       variant: minimal
 ---
 
-import { CardGrid, Card } from "@astrojs/starlight/components";
+import { CardGrid, Card, LinkCard } from "@astrojs/starlight/components";
+
+## The Journey at a Glance
+
+```mermaid
+graph LR
+  S["**Strategy**\nCAF · MCEM 1"] --> A["**Assess & Design**\nAzure Migrate · MCEM 2"]
+  A --> E["**Execute**\nEmpower & Achieve · MCEM 3"]
+  E --> O["**Outcomes**\nRealize Value · MCEM 4"]
+  O --> M["**Optimize**\nManage & Grow · MCEM 5"]
+```
+
+## By the Numbers
+
+<CardGrid>
+  <Card title="2 Horizons" icon="list-format">
+    **H1** — Lift & Shift in weeks. **H2** — Modernize over months. Strategy
+    decides which path each workload takes.
+  </Card>
+  <Card title="Typical 30–60% Savings" icon="approve-check-circle">
+    Right-sizing, reserved instances, and PaaS services deliver measurable
+    savings. Use the [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/) for your estimate.
+  </Card>
+  <Card title="Zero-ETL Analytics" icon="rocket">
+    SQL MI and Azure SQL DB mirror data to Fabric in near-real-time — no
+    pipelines to build or maintain.
+  </Card>
+  <Card title="5 MCEM Stages" icon="open-book">
+    Listen & Consult → Inspire & Design → Empower & Achieve → Realize Value
+    → Manage & Optimize. A proven engagement methodology.
+  </Card>
+</CardGrid>
+
+## What You Will Learn
+
+<CardGrid>
+  <LinkCard
+    title="Strategy First"
+    description="Align modernization to business outcomes using CAF and MCEM Stage 1."
+    href="/dc2fabric/strategy/"
+  />
+  <LinkCard
+    title="Assess Everything"
+    description="Azure Migrate scans VMs, apps, and databases for evidence-based decisions."
+    href="/dc2fabric/assessment/"
+  />
+  <LinkCard
+    title="The Horizons Model"
+    description="Match each workload to the right level of modernization."
+    href="/dc2fabric/horizons/"
+  />
+  <LinkCard
+    title="Execution & Guardrails"
+    description="Migrate in waves with validation checkpoints at every step."
+    href="/dc2fabric/execution/"
+  />
+  <LinkCard
+    title="Fabric as the Unifier"
+    description="All data converges in OneLake — one analytics platform, not two."
+    href="/dc2fabric/outcomes/"
+  />
+  <LinkCard
+    title="Full Journey Map"
+    description="The complete MCEM journey with stage-by-stage breakdown and Gantt timeline."
+    href="/dc2fabric/journey-map/"
+  />
+</CardGrid>
 
 ## Three Industries, One Journey
 
@@ -23,18 +92,23 @@ the same modernization journey.
 
 <CardGrid>
   <Card title="Manufacturing" icon="setting">
-    Contoso Industries transforms its supply chain with predictive
-    analytics and real-time operational data.
-    [Read the story &rarr;](/dc2fabric/industries/manufacturing/)
+    **Contoso Industries** — 127 VMs, real-time supply chain visibility,
+    predictive maintenance via Fabric. [Read the story
+    →](/dc2fabric/industries/manufacturing/)
   </Card>
   <Card title="Financial Services" icon="approve-check-circle">
-    Woodgrove Bank modernizes for regulatory compliance, fraud
-    detection, and a unified data platform.
-    [Read the story &rarr;](/dc2fabric/industries/financial-services/)
+    **Woodgrove Bank** — 340 VMs, regulatory compliance, real-time fraud
+    detection via Fabric. [Read the story
+    →](/dc2fabric/industries/financial-services/)
   </Card>
   <Card title="Retail" icon="open-book">
-    Northwind Traders scales for seasonal demand and unlocks a
-    Customer 360 view.
-    [Read the story &rarr;](/dc2fabric/industries/retail/)
+    **Northwind Traders** — 65 VMs, seasonal autoscaling, Customer 360 view via
+    Fabric. [Read the story →](/dc2fabric/industries/retail/)
   </Card>
 </CardGrid>
+
+:::note[For Microsoft Partners]
+Delivering this journey to your customers? The
+[Partner Guide](/dc2fabric/industries/partner-guide/) has conversation
+starters, objection handling, and industry quick-reference cards.
+:::

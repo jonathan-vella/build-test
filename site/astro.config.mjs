@@ -20,28 +20,33 @@ export default defineConfig({
           attrs: {
             type: "module",
           },
-          content: `import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, theme: "default" });`,
+          content: `import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, theme: "base", themeVariables: { primaryColor: "#0078d4", primaryTextColor: "#ffffff", primaryBorderColor: "#005a9e", lineColor: "#505050", secondaryColor: "#deecf9", tertiaryColor: "#f3f2f1", fontFamily: "Segoe UI, system-ui, sans-serif" }});`,
         },
       ],
       sidebar: [
         {
           label: "Strategy",
+          badge: { text: "Stage 1", variant: "note" },
           autogenerate: { directory: "strategy" },
         },
         {
           label: "Assessment",
+          badge: { text: "Stage 2", variant: "note" },
           autogenerate: { directory: "assessment" },
         },
         {
           label: "Horizons",
+          badge: { text: "Stage 2", variant: "note" },
           autogenerate: { directory: "horizons" },
         },
         {
           label: "Execution",
+          badge: { text: "Stage 3", variant: "note" },
           autogenerate: { directory: "execution" },
         },
         {
           label: "Outcomes",
+          badge: { text: "Stage 4–5", variant: "note" },
           autogenerate: { directory: "outcomes" },
         },
         {
@@ -50,6 +55,7 @@ export default defineConfig({
         },
         {
           label: "Industries",
+          badge: { text: "3 Stories", variant: "tip" },
           autogenerate: { directory: "industries" },
         },
       ],

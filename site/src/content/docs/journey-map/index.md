@@ -5,6 +5,13 @@ sidebar:
   order: 1
 ---
 
+:::tip[TL;DR]
+The five official MCEM stages — Listen & Consult, Inspire & Design,
+Empower & Achieve, Realize Value, Manage & Optimize — map to the
+dc2fabric journey. H1 and H2 run in overlapping phases across Stages 2–4,
+with Fabric going live as mirroring is enabled. Stage 5 is ongoing.
+:::
+
 This page maps the entire dc2fabric journey across the five stages of the
 Microsoft Customer Engagement Methodology (MCEM). Each stage builds on
 the previous one, with clear activities, outcomes, and decision points.
@@ -13,10 +20,10 @@ the previous one, with clear activities, outcomes, and decision points.
 
 ```mermaid
 graph LR
-  S1["**Stage 1**<br/>Listen &<br/>Consult"] --> S2["**Stage 2**<br/>Inspire"]
-  S2 --> S3["**Stage 3**<br/>Design"]
-  S3 --> S4["**Stage 4**<br/>Empower"]
-  S4 --> S5["**Stage 5**<br/>Realize<br/>Value"]
+  S1["**Stage 1**<br/>Listen &<br/>Consult"] --> S2["**Stage 2**<br/>Inspire &<br/>Design"]
+  S2 --> S3["**Stage 3**<br/>Empower &<br/>Achieve"]
+  S3 --> S4["**Stage 4**<br/>Realize<br/>Value"]
+  S4 --> S5["**Stage 5**<br/>Manage &<br/>Optimize"]
 ```
 
 ## Stage-by-Stage Breakdown
@@ -35,9 +42,9 @@ graph LR
 **Decision gate:** Does cloud modernization align with the customer's
 strategic priorities? If yes, proceed to assessment.
 
-### Stage 2 — Inspire
+### Stage 2 — Inspire and Design
 
-**Focus:** Show what is possible with evidence, not promises.
+**Focus:** Show what is possible with evidence, and design the roadmap.
 
 | Activity                               | Outcome                                        |
 | -------------------------------------- | ---------------------------------------------- |
@@ -45,32 +52,22 @@ strategic priorities? If yes, proceed to assessment.
 | Infrastructure readiness analysis      | Migration readiness scores per workload        |
 | Application compatibility analysis     | .NET version map and modernization complexity  |
 | Database compatibility analysis        | SQL feature usage and Azure SQL target mapping |
+| Horizons classification workshop       | Workloads assigned to H1 or H2                 |
+| Architecture design per horizon        | Target architecture diagrams                   |
+| Fabric integration planning            | Data mirroring strategy                        |
+| Migration wave planning                | Phased execution roadmap                       |
 
-**Decision gate:** Does the assessment confirm that the estate is suitable
-for migration? Are the expected benefits realistic?
+**Decision gate:** Does the assessment confirm the estate is suitable for
+migration? Is the horizons roadmap approved by the customer?
 
-### Stage 3 — Design
-
-**Focus:** Match each workload to the right modernization horizon.
-
-| Activity                         | Outcome                        |
-| -------------------------------- | ------------------------------ |
-| Horizons classification workshop | Workloads assigned to H1 or H2 |
-| Architecture design per horizon  | Target architecture diagrams   |
-| Fabric integration planning      | Data mirroring strategy        |
-| Migration wave planning          | Phased execution roadmap       |
-
-**Decision gate:** Is the roadmap approved by the customer?
-Are resources allocated for execution?
-
-### Stage 4 — Empower
+### Stage 3 — Empower and Achieve
 
 **Focus:** Execute the migration and build customer capability.
 
 | Activity                                 | Outcome                             |
 | ---------------------------------------- | ----------------------------------- |
 | H1: VM migration waves via Azure Migrate | Workloads running on Azure VMs      |
-| H1: SQL MI migration via DMS             | Databases on SQL Managed Instance   |
+| H1: SQL MI migration via MI Link / DMS   | Databases on SQL Managed Instance   |
 | H2: .NET upgrade and containerization    | Apps on Azure Container Apps        |
 | H2: Azure SQL DB migration               | Databases on Azure SQL Database     |
 | Fabric mirroring configuration           | Operational data flowing to OneLake |
@@ -78,7 +75,7 @@ Are resources allocated for execution?
 **Decision gate:** Are all workloads validated and performing as expected
 in Azure? Is the on-premises environment ready for decommission?
 
-### Stage 5 — Realize Value
+### Stage 4 — Realize Value
 
 **Focus:** Measure outcomes against the original business strategy.
 
@@ -88,7 +85,18 @@ in Azure? Is the on-premises environment ready for decommission?
 | Operational efficiency assessment | Reduced manual effort, faster deployments      |
 | Analytics platform review         | Fabric dashboards delivering business insights |
 | Skills assessment                 | Customer team operating independently          |
-| Continuous improvement planning   | Roadmap for ongoing modernization              |
+
+### Stage 5 — Manage and Optimize
+
+**Focus:** Continuously improve and expand the Azure and Fabric estate.
+
+| Activity                           | Outcome                                         |
+| ---------------------------------- | ----------------------------------------------- |
+| Ongoing cost optimization          | Azure Advisor reviews, reservation adjustments  |
+| Operational maturity advancement   | Proactive monitoring, automated remediation     |
+| Fabric workload expansion          | New data sources, new dashboards, AI/ML models  |
+| H1 → H2 evolution assessment       | Periodic review of H1 workloads for H2 readiness|
+| Continuous improvement planning    | Roadmap for next engagement cycle               |
 
 ## Horizons Across MCEM
 
@@ -100,11 +108,11 @@ gantt
   dateFormat YYYY-MM
   axisFormat %b
   section MCEM Stages
-    Stage 1 - Listen & Consult :s1, 2026-01, 1M
-    Stage 2 - Inspire          :s2, after s1, 1M
-    Stage 3 - Design           :s3, after s2, 1M
-    Stage 4 - Empower          :s4, after s3, 4M
-    Stage 5 - Realize Value    :s5, after s4, 2M
+    Stage 1 - Listen & Consult    :s1, 2026-01, 1M
+    Stage 2 - Inspire & Design    :s2, after s1, 2M
+    Stage 3 - Empower & Achieve   :s3, after s2, 4M
+    Stage 4 - Realize Value       :s4, after s3, 1M
+    Stage 5 - Manage & Optimize   :s5, after s4, 2M
   section Horizon 1
     Assessment & planning :h1a, 2026-02, 2M
     Migration execution   :h1b, 2026-04, 2M

@@ -1,20 +1,27 @@
 ---
 title: "The Horizons Model"
-description: "Designing a modernization roadmap with Horizon 1 (Lift & Shift) and Horizon 2 (Modernize) — MCEM Stage 3"
+description: "Designing a modernization roadmap with Horizon 1 (Lift & Shift) and Horizon 2 (Modernize) — MCEM Stage 2: Inspire and Design"
 sidebar:
   order: 1
 ---
+
+:::tip[TL;DR]
+Not every workload needs the same treatment. Horizon 1 (Lift & Shift) gets
+workloads to Azure in weeks with minimal risk. Horizon 2 (Modernize) re-architects
+for cloud-native agility over months. Strategy decides which path each workload takes.
+:::
 
 The assessment gave us the evidence. Now we design the roadmap.
 **Not every workload needs the same treatment.** The Horizons model
 provides a structured way to match each workload to the right level of
 modernization — based on business strategy, not technical ambition.
 
-## MCEM Stage 3 — Design
+## MCEM Stage 2 — Inspire and Design (continued)
 
-This is **MCEM Stage 3: Design**. We take the assessment findings, overlay
-the customer's strategic priorities, and produce a concrete plan that balances
-quick wins with long-term transformation.
+Horizons design is the second half of **MCEM Stage 2: Inspire and Design**.
+We take the assessment findings, overlay the customer's strategic priorities,
+and produce a concrete plan that balances quick wins with long-term
+transformation.
 
 ## Two Horizons
 
@@ -100,3 +107,5 @@ Explore each horizon and its Fabric integration in detail:
 - [Horizon 1 + Fabric](/dc2fabric/horizons/h1-fabric/)
 - [Horizon 2 — Modernize](/dc2fabric/horizons/h2-modernize/)
 - [Horizon 2 + Fabric](/dc2fabric/horizons/h2-fabric/)
+
+[← Back to Assessment](/dc2fabric/assessment/) · [Skip to Execution →](/dc2fabric/execution/)

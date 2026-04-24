@@ -5,6 +5,13 @@ sidebar:
   order: 4
 ---
 
+:::tip[TL;DR]
+Horizon 2 containerizes .NET apps and migrates databases to Azure SQL Database
+over **3–6 months**. The result: elastic autoscaling, CI/CD pipelines, and
+40–60% cost reduction through serverless PaaS — at the cost of deeper
+application changes.
+:::
+
 Horizon 2 is a deeper transformation. Applications are re-architected for
 the cloud. Databases move to fully managed PaaS services. The result is a
 modern, elastic, DevOps-ready platform that can evolve as fast as the
@@ -48,7 +55,8 @@ Moving from .NET Framework to modern .NET is the core application change
 in Horizon 2. The approach depends on the application's complexity:
 
 1. **Upgrade in place** — For well-structured applications, use the
-   .NET Upgrade Assistant to migrate from .NET Framework to .NET 8+
+   .NET Upgrade Assistant (or the newer GitHub Copilot modernization
+   agent in Visual Studio) to migrate from .NET Framework to .NET 8+
 2. **Strangler fig pattern** — For large monoliths, extract services
    incrementally while the legacy application continues to run
 3. **Rewrite critical paths** — For deeply coupled code, rewrite the
@@ -64,13 +72,25 @@ Azure SQL Database is a different service from SQL Managed Instance.
 Where SQL MI maximizes compatibility with on-premises SQL Server,
 Azure SQL Database is designed for cloud-native workloads:
 
-- **Serverless compute** — Scales to zero during idle periods, scales
-  up automatically under load
+- **Serverless compute** — Scales to zero during idle periods (General
+  Purpose tier), scales up automatically under load
 - **Built-in intelligence** — Automatic tuning, threat detection,
   and performance recommendations
 - **Elastic pools** — Share resources across multiple databases for
   cost efficiency
-- **Hyperscale tier** — Scale to 100 TB+ with near-instant backups
+- **Hyperscale tier** — Scale to 128 TB with near-instant backups
+
+## Before and After
+
+| Dimension            | Before (H1 or On-Prem)      | After (Horizon 2)                   |
+| -------------------- | --------------------------- | ----------------------------------- |
+| **Application**      | .NET Framework on IIS / VMs | .NET 8+ on Azure Container Apps     |
+| **Database**         | SQL Server or SQL MI        | Azure SQL Database (serverless)     |
+| **Deployment**       | Manual or scripted          | CI/CD via GitHub Actions            |
+| **Scaling**          | Vertical (resize VM)        | Horizontal autoscale, scale-to-zero |
+| **Cost model**       | Fixed VM costs              | Pay-per-use, serverless             |
+| **Analytics**        | Limited or batch            | Real-time via Fabric mirroring      |
+| **Typical timeline** | —                           | **3–6 months**                      |
 
 :::tip[Not every workload needs H2]
 Horizon 2 delivers the most value for workloads that are actively
@@ -84,3 +104,5 @@ better fit — and the smarter investment.
 With a containerized application and Azure SQL Database, you are
 ready to add [Fabric integration via Azure SQL DB mirroring](/dc2fabric/horizons/h2-fabric/)
 for a fully unified, AI-ready data platform.
+
+[← Back to H1 + Fabric](/dc2fabric/horizons/h1-fabric/) · [Next: H2 + Fabric →](/dc2fabric/horizons/h2-fabric/)

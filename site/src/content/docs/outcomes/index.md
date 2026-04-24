@@ -1,18 +1,26 @@
 ---
 title: "The Payoff"
-description: "Business outcomes, Fabric as the unifier, and realized value — MCEM Stage 5"
+description: "Business outcomes, Fabric as the unifier, and realized value — MCEM Stages 4–5"
 sidebar:
   order: 1
 ---
+
+:::tip[TL;DR]
+H1 delivers 30–40% typical cost savings; H2 delivers 40–60% (use the
+[Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/)
+for your estimate). Both horizons feed data into Fabric via mirroring,
+creating a unified analytics platform. MCEM Stage 5 ensures continuous
+optimization beyond the initial migration.
+:::
 
 The workloads are migrated. The analytics platform is live. Now we
 measure the outcomes against the business strategy we defined at the
 very beginning — and demonstrate that modernization delivered real,
 measurable value.
 
-## MCEM Stage 5 — Realize Value
+## MCEM Stage 4 — Realize Value
 
-This is **MCEM Stage 5: Realize Value**. The customer sees the results
+This is **MCEM Stage 4: Realize Value**. The customer sees the results
 of their investment — not in technical metrics, but in business outcomes
 that matter to their leadership team.
 
@@ -20,11 +28,18 @@ that matter to their leadership team.
 
 | Outcome                    | Horizon 1                                                    | Horizon 2                                             |
 | -------------------------- | ------------------------------------------------------------ | ----------------------------------------------------- |
-| **Infrastructure cost**    | 30-40% reduction through right-sizing and reserved instances | 40-60% reduction through PaaS and serverless          |
+| **Infrastructure cost**    | ~30-40% typical reduction (right-sizing + reserved instances)| ~40-60% typical reduction (PaaS + serverless)         |
 | **Operational overhead**   | Managed patching, backups, and HA replace manual processes   | Fully managed platform — no infrastructure to operate |
 | **Time to deploy changes** | Days (same as before, but on better infrastructure)          | Minutes (CI/CD pipelines with automated testing)      |
 | **Scale capability**       | Vertical scaling within VM SKU families                      | Elastic horizontal scaling, scale-to-zero             |
 | **Analytics latency**      | Near-real-time via SQL MI Mirroring                          | Near-real-time via Azure SQL DB Mirroring             |
+
+:::note[Cost savings are estimates]
+Actual savings vary by workload, SKU selection, and usage patterns. Use the
+[Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/)
+and [Azure Migrate business case](https://learn.microsoft.com/azure/migrate/how-to-view-a-business-case)
+for customer-specific projections.
+:::
 
 ## Fabric as the Unifier
 
@@ -73,3 +88,28 @@ The Horizons model ensures that every step forward delivers measurable
 value — and that no step requires a disruptive, high-risk transformation.
 
 **Modernization is a journey, not a big bang.**
+
+## MCEM Stage 5 — Manage and Optimize
+
+The journey does not end at value realization. **MCEM Stage 5: Manage and
+Optimize** ensures the customer continues to extract and grow value from
+their Azure and Fabric investments:
+
+- **Cost optimization** — Regular reviews with Azure Advisor and Cost
+  Management to right-size, eliminate waste, and adjust reservations
+- **Operational maturity** — Evolve from reactive operations to proactive
+  monitoring, automated remediation, and SRE practices
+- **Fabric expansion** — Onboard new data sources, build additional Power BI
+  dashboards, and introduce AI/ML workloads as the data estate grows
+- **H1 → H2 evolution** — Re-evaluate H1 workloads periodically; when the
+  business case justifies modernization, plan the transition to H2
+- **Skills development** — Continue upskilling the customer team in Azure,
+  Fabric, and DevOps practices
+
+:::note[MCEM is cyclical]
+Stage 5 feeds back into Stage 1. New business needs, new workloads, or
+new Azure capabilities may trigger the next engagement cycle — but with a
+team that is already cloud-capable and a platform already in place.
+:::
+
+[← Back to Execution](/dc2fabric/execution/) · [View Full Journey Map →](/dc2fabric/journey-map/)

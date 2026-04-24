@@ -5,6 +5,12 @@ sidebar:
   order: 3
 ---
 
+:::tip[TL;DR]
+SQL MI Mirroring replicates operational data into Fabric’s OneLake in near
+real-time — zero ETL, zero code changes, zero impact on the production
+database. Analytics, BI, and ML become available on day one.
+:::
+
 Here is the multiplier on Horizon 1: **without changing a single line of
 application code**, you can stream operational data from SQL Managed Instance
 into Microsoft Fabric for near-real-time analytics, reporting, and AI.
@@ -62,3 +68,5 @@ Mirroring makes sense when the customer's strategy includes:
 
 If these are not strategic priorities today, mirroring can be enabled
 later — it is a configuration change, not a re-architecture.
+
+[← Back to H1 Lift & Shift](/dc2fabric/horizons/h1-lift-shift/) · [Next: H2 Modernize →](/dc2fabric/horizons/h2-modernize/)

@@ -1,9 +1,15 @@
 ---
 title: "Strategy First"
-description: "Aligning modernization to business outcomes using the Cloud Adoption Framework and MCEM Stage 1"
+description: "Aligning modernization to business outcomes using the Cloud Adoption Framework and MCEM Stage 1: Listen and Consult"
 sidebar:
   order: 1
 ---
+
+:::tip[TL;DR]
+Modernization starts with business strategy, not technology. Using the Cloud
+Adoption Framework and MCEM Stage 1, we align every workload decision to
+measurable business outcomes — before anything moves to the cloud.
+:::
 
 Every modernization journey starts with a question that has nothing to do with
 technology: **What does your business need to achieve?**
@@ -82,3 +88,5 @@ is how we get there.
 With a clear strategy in hand, we move to **Assessment** — using Azure Migrate to
 build a complete, evidence-based picture of the current estate and identify the
 best path forward for every workload.
+
+[Continue to Assessment →](/dc2fabric/assessment/)
