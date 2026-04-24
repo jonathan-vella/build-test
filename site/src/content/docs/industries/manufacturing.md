@@ -1,0 +1,97 @@
+---
+title: "Contoso Industries — Manufacturing"
+description: "How a manufacturing company modernizes from datacenter to Fabric for predictive analytics and supply chain visibility"
+sidebar:
+  order: 1
+---
+
+**Contoso Industries** is a mid-sized manufacturer with 15 production
+facilities across Europe. Their IT estate has grown organically over
+two decades — reliable, but increasingly unable to support the business
+decisions that leadership needs to make.
+
+## The Challenge
+
+Contoso's business is under pressure from multiple directions:
+
+- **Supply chain disruption** — Global events have exposed the fragility
+  of Contoso's just-in-time supply chain. Leadership wants real-time
+  visibility into production, inventory, and supplier performance.
+- **Aging infrastructure** — The on-premises data center runs 120+ Windows
+  Server VMs, including a critical ERP system built on .NET Framework 4.6
+  with a SQL Server 2016 backend.
+- **No analytics capability** — Production data is trapped in application
+  databases. Monthly reports are generated manually from spreadsheet exports.
+  There is no self-service BI and no predictive capability.
+- **Skills gap** — The IT team excels at keeping the lights on but has
+  limited cloud experience.
+
+:::note[Why now?]
+Contoso's CEO has committed to the board that the company will have
+real-time supply chain visibility within 18 months. The existing
+infrastructure cannot deliver this. The modernization program is not
+an IT initiative — it is a board-level strategic priority.
+:::
+
+## The Assessment
+
+Azure Migrate reveals the estate:
+
+| Category             | Count | Finding                                               |
+| -------------------- | ----- | ----------------------------------------------------- |
+| Windows Server VMs   | 127   | 85 can migrate as-is, 30 need OS upgrade, 12 are idle |
+| .NET applications    | 14    | 10 are .NET Framework 4.x, 4 are already .NET 6+      |
+| SQL Server databases | 22    | 18 compatible with SQL MI, 4 need feature remediation |
+
+## The Horizons Decision
+
+| Workload                         | Horizon | Rationale                                               |
+| -------------------------------- | ------- | ------------------------------------------------------- |
+| ERP system (core manufacturing)  | **H1**  | Business-critical, stable, no appetite for code changes |
+| MES (shop floor execution)       | **H1**  | Tightly coupled to ERP, move together                   |
+| Customer portal (order tracking) | **H2**  | Customer-facing, needs elastic scale for peak ordering  |
+| Supply chain dashboard           | **H2**  | New development — build cloud-native from day one       |
+
+## Execution
+
+**Horizon 1** (Months 1-4):
+
+- Migrate 85 VMs to Azure in 4 waves
+- Migrate ERP and MES databases to SQL Managed Instance
+- Enable SQL MI Mirroring to Fabric for production data
+
+**Horizon 2** (Months 3-8):
+
+- Modernize customer portal: .NET Framework → .NET 8, containerize
+- Build new supply chain dashboard as a cloud-native application
+- Both backed by Azure SQL Database, mirrored to Fabric
+
+## The Payoff
+
+```mermaid
+graph TB
+  subgraph "Horizon 1"
+    ERP["ERP → SQL MI"]
+    MES["MES → SQL MI"]
+  end
+  subgraph "Horizon 2"
+    PORTAL["Customer Portal → Azure SQL DB"]
+    SUPPLY["Supply Chain App → Azure SQL DB"]
+  end
+  ERP -->|"Mirror"| FAB["**Fabric OneLake**"]
+  MES -->|"Mirror"| FAB
+  PORTAL -->|"Mirror"| FAB
+  SUPPLY -->|"Mirror"| FAB
+  FAB --> PBI["**Power BI**<br/>Supply Chain Dashboard"]
+  FAB --> ML["**Data Science**<br/>Predictive Maintenance"]
+```
+
+**Business outcomes:**
+
+- Real-time supply chain visibility — delivered to the CEO's dashboard
+  in Power BI, updated in near-real-time from production systems
+- Predictive maintenance models trained on actual production data in
+  Fabric, reducing unplanned downtime by identifying equipment issues
+  before they cause failures
+- 35% infrastructure cost reduction through right-sizing and PaaS
+- IT team upskilled in Azure operations and Fabric analytics

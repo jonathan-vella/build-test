@@ -1,0 +1,22 @@
+{
+  "name": "dc2fabric-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.7.0",
+    "@astrojs/starlight": "0.32.4",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "rehype-mermaid-lite": "^1.1.0"
+  },
+  "overrides": {
+    "@astrojs/sitemap": "3.6.1"
+  }
+}
